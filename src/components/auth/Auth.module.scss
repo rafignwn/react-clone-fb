@@ -1,0 +1,222 @@
+@import "../../assets/variable.scss";
+@import "../../assets/grid.scss";
+
+.authContainer {
+  @include displayGrid();
+  min-height: 650px;
+  height: 100vh;
+  width: 100%;
+
+  .authLeft {
+    @include column(8);
+    background-image: url("http://localhost:5173/images/d-cover.jpg");
+    background-size: cover;
+    height: 100%;
+    position: relative;
+
+    .authLeftContent {
+      position: absolute;
+      width: 20rem;
+      right: 9rem;
+      top: 50%;
+      translate: 0 -90%;
+      padding-inline: 1rem;
+
+      .authLogo {
+        color: $hoverColor;
+        font-weight: 900;
+        font-size: 3rem;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .authDesc {
+        color: $textWhite;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .authRight {
+    @include column(4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 3rem;
+    position: relative;
+
+    .authLogo {
+      top: 3rem;
+      left: 3rem;
+      font-size: 3rem;
+      color: $textBlue;
+      display: inline-block;
+      font-weight: 900;
+      margin-bottom: 1.75rem;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .authLogoAbsolute {
+      position: absolute;
+    }
+
+    .authTitle {
+      font-size: 2rem;
+      font-weight: 300;
+      color: $hoverColor;
+      margin-bottom: 2rem;
+    }
+
+    .authSuccessMessage {
+      background-color: $successBackground;
+      border-radius: $radiusMid;
+      padding: 0.5rem 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+
+      .authSuccessMessageText {
+        color: $textWhite;
+        line-height: 1.5;
+      }
+    }
+
+    .authForm {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .authFormGroup {
+
+        &:not(:first-child) {
+          margin-top: 1.5rem;
+        }
+
+        .authError {
+          display: inline-block;
+          color: $errorColor;
+          font-size: .9rem;
+          margin-top: .25rem;
+          margin-left: 0.5rem;
+        }
+
+        .authInputWrapper {
+          width: 100%;
+          height: fit-content;
+          position: relative;
+  
+          .authErrorIcon {
+            color: hsl(2, 100%, 50%);
+            position: absolute;
+            right: .75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+          }
+  
+          .authInput {
+            width: 100%;
+            background: none;
+            box-sizing: border-box;
+            border: 2px solid $borderBlue;
+            border-radius: $radiusMid;
+            color: $textWhite;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            padding-block: 0.9rem;
+            padding-left: 1rem;
+            padding-right: 2.5rem;
+    
+            &:not(:first-child) {
+              margin-top: 1.5rem;
+            }
+    
+            &::placeholder {
+              color: $textGray;
+            }
+    
+            &:valid {
+              outline: none;
+              border-color: $hoverColor;
+            }
+    
+            &:focus {
+              outline: none;
+              border-color: $textGray;
+            }
+    
+            &.authInputError {
+              border-color: hsl(2, 100%, 50%);
+            }
+          }
+        }
+      }
+
+      .authInputNone {
+        display: none;
+      }
+
+      .authButton {
+        all: unset;
+        padding-block: 0.7rem;
+        background-color: $borderBlue;
+        color: $hoverColor;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border-radius: $radiusMid;
+        margin-top: 2.5rem;
+        position: relative;
+
+        @keyframes gradient {
+          100%,
+          0% {
+            background-position: 0 100%;
+          }
+          50% {
+            background-position: 50% 200%;
+          }
+        }
+
+        &.p_loading {
+          padding-block: 0.25rem;
+          background-size: 300% 200%;
+          background-image: linear-gradient(90deg, $borderBlue, $textWhite);
+          animation: gradient 3s linear infinite;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .authRegisterButton {
+      width: 100%;
+      padding-inline: 0.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+      margin-top: 1.25rem;
+      color: $textWhite;
+
+      a.disabledLink {
+        pointer-events: none;
+      }
+
+      a {
+        margin-left: 0.5rem;
+        color: #187dc1;
+        font-weight: 600;
+
+        &:active,
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

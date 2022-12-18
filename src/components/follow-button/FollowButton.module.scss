@@ -1,0 +1,35 @@
+@import "../../assets/variable.scss";
+
+.followBtn {
+  all: unset;
+  background-color: $borderBlue;
+  color: $hoverColor;
+  padding: 0.25rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  border-radius: $radiusLow;
+  text-align: center;
+  scale: 1;
+  transition: scale 200ms ease-in;
+  width: 6rem;
+
+  &:active {
+    scale: 0.9;
+  }
+
+  &.unfollow {
+    background-color: transparent;
+    font-size: 1rem;
+    border: 1px solid $activeBackground;
+    font-weight: 300;
+    color: $textGray;
+  }
+
+  &.followBtnLoading {
+    padding-block: 0.15rem;
+    pointer-events: none;
+    cursor: default;
+  }
+}

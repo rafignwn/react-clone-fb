@@ -1,0 +1,38 @@
+@import '../../assets/variable.scss';
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .errorContent {
+        min-width: 480px;
+        width: fit-content;
+        color: $textWhite;
+        text-align: center;
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            font-weight: 600;
+            letter-spacing: .5px;
+            margin-bottom: 1.5rem;
+        }
+
+        p.errorMessage {
+            padding: .5rem 1rem;
+            font-weight: 400;
+            display: inline-block;
+            background-color: $hoverBackground;
+            border-radius: $radiusMid;
+        }
+    }
+}

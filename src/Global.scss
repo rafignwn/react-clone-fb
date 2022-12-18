@@ -1,0 +1,13 @@
+@import './assets/variable.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    background-color: #0A1929;
+    max-width: 1370px;
+    margin-inline: auto;
+}

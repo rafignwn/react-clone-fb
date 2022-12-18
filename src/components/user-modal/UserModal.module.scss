@@ -1,0 +1,113 @@
+@import "../../assets/variable.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.userModal {
+  width: 22rem;
+  background-color: $contentBackground;
+  //   border: 1px solid $textGray;
+  height: fit-content;
+  box-shadow: 0px 0px 4px $bodyBackground;
+  border-radius: $radiusLow;
+
+  .userModalWrapper {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    .userModalProfile {
+      width: 100%;
+      box-shadow: -2px 5px 10px hsla(0, 0%, 6%, 0.38);
+      border-radius: $radiusLow;
+      padding: 0.35rem;
+      margin-bottom: 1.5rem;
+
+      .userModalProfileInfo {
+        width: 100%;
+        border-radius: $radiusLow;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1.15rem;
+        padding-inline: 0.75rem;
+        padding-block: 0.75rem;
+        margin-bottom: .5rem;
+        background-color: transparent;
+        transition: background-color 200ms ease-in;
+
+        &:hover {
+          background-color: $hoverBackground;
+        }
+
+        .userModalProfileImg {
+          width: 2rem;
+          height: 2rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        .userModalProfileName {
+          font-size: 1.05rem;
+          letter-spacing: .6px;
+          font-weight: 300;
+          color: $textWhite;
+        }
+      }
+
+      .userModalProfileBtn {
+        box-shadow: 0px -1px 0px hsla(206, 12%, 66%, 0.351);
+        padding: .5rem;
+        
+        .userModalBtnAnotherProfile {
+          font-size: 1rem;
+          letter-spacing: .5px;
+          text-transform: capitalize;
+          color: $textBlue;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .userModalMenu{
+      list-style: none;
+      width: 100%;
+      
+      .userModalMenuItem{
+        margin-bottom: .25rem;
+        padding: .5rem;
+        color: $textWhite;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: .75rem;
+        background-color: transparent;
+        border-radius: $radiusLow;
+        transition: background-color 200ms ease-in, color 200ms ease-out;
+
+        &:hover {
+          background-color: $hoverBackground;
+          color: $textBlue;
+        }
+
+        .userModalIcon {
+          background-color: $iconBlue;
+          border-radius: 50%;
+          width: 2.5rem;
+          height: 2.5rem;
+          padding: .5rem;
+        }
+
+        .userModalMenuItemText {
+          letter-spacing: .6px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

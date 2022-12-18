@@ -1,0 +1,94 @@
+@import '../../assets/variable.scss';
+@import '../../assets/grid.scss';
+
+.profile {
+    @include displayGrid();
+
+    .profileTop {
+        @include column(12);
+        margin-bottom: .78rem;
+
+        .profileCover {
+            width: 100%;
+            position: relative;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            margin-bottom: 10rem;
+
+            .profileCoverImg {
+                width: 100%;
+                height: 20rem;
+                object-fit: cover;
+                border-radius: $radiusMid;
+            }
+
+            .profileUserImg {
+                width: 11rem;
+                height: 11rem;
+                border-radius: 50%;
+                object-fit: cover;
+                border: .325rem solid $bodyBackground;
+            }
+
+            .profileInfo {
+                margin-top: 5rem;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                translate: -50% 50%;
+                // border: 1px solid red;
+
+                .profileInfoName {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: $hoverColor;
+                }
+
+                .profileInfoDesc {
+                    font-size: 1rem;
+                    margin-top: .25rem;
+                    font-weight: 300;
+                    color: $textWhite;
+                }
+            }
+
+            .profileBtnEdit {
+                position: absolute;
+                right: 1.5rem;
+                border: 1px solid $textGray;
+                bottom: -1rem;
+                padding: .5rem 1.25rem;
+                color: $textWhite;
+                background-color: $hoverBackground;
+                border-radius: $radiusMid;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $bodyBackground;
+                    color: $textGray;
+                    border-color: $activeBackground;
+                }
+                
+                .profileEditIcon {
+                    margin-left: .5rem;
+                    font-size: 1.25rem;
+                }
+
+                .profileBtnEditText {
+                    letter-spacing: .6px;
+                }
+            }
+        }
+    }
+
+    .profileFeed {
+        @include column(8);
+    }
+
+    .profileRightbar {
+        @include column(4);
+    }
+}

@@ -1,0 +1,14 @@
+@mixin column($col) {
+    grid-column: auto / span $col;
+} 
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+@for $col from 1 through 12 {
+    .column_#{$col} {
+        @include column($col);
+    }
+}

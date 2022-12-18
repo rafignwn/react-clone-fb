@@ -1,0 +1,8 @@
+@mixin displayGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+@mixin column($col) {
+    grid-column: auto / span $col;
+} 

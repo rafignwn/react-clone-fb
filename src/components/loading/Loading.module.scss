@@ -1,0 +1,135 @@
+@import "../../assets/variable.scss";
+@import "../../assets/grid.scss";
+
+@keyframes skaletonAnimation {
+  100%,
+  0% {
+    background-color: $activeBackground;
+  }
+  50% {
+    background-color: $hoverBackground;
+  }
+}
+
+.skeletonPost {
+  width: 100%;
+  padding: 1.25rem;
+  background-color: $postBackground;
+  border-radius: $radiusMid;
+  box-sizing: border-box;
+
+  .skeletonPostInfo {
+    display: flex;
+    align-items: center;
+
+    .skeletonUserImg {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background-color: $activeBackground;
+      animation: skaletonAnimation 2s linear infinite;
+      margin-right: 1rem;
+    }
+
+    .skeletonUsername {
+      width: 8rem;
+      height: 1.25rem;
+      border-radius: $radiusMid;
+      background-color: $activeBackground;
+      animation: skaletonAnimation 2s linear infinite;
+      margin-right: 1rem;
+    }
+
+    .skeletonPostDate {
+      width: 4rem;
+      height: 1rem;
+      border-radius: $radiusMid;
+      background-color: $activeBackground;
+      animation: skaletonAnimation 2s linear infinite;
+    }
+  }
+
+  .skeletonPostContent {
+    margin-block: 2rem;
+
+    .skeletonPostDesc {
+      width: 14rem;
+      height: 1.25rem;
+      border-radius: $radiusMid;
+      background-color: $activeBackground;
+      animation: skaletonAnimation 2s linear infinite;
+      margin-bottom: 1.25rem;
+    }
+
+    .skeletonPostImg {
+      width: 100%;
+      height: 300px;
+      border-radius: $radiusMid;
+      background-color: $activeBackground;
+      animation: skaletonAnimation 2s linear infinite;
+    }
+  }
+
+  .skeletonPostFooter {
+    width: 10rem;
+    height: 1.25rem;
+    background-color: $activeBackground;
+    animation: skaletonAnimation 2s linear infinite;
+    border-radius: $radiusMid;
+  }
+}
+
+.skeletonProfile {
+  @include displayGrid();
+  min-height: 100vh;
+
+  .skeletonProfileTop {
+    @include column(12);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+
+    .skeletonProfileCover {
+      height: 20rem;
+      width: 100%;
+      background-color: $contentBackground;
+      animation: skaletonAnimation 2s linear infinite;
+      border-radius: $radiusMid;
+    }
+
+    .skeletonProfileInfoWrapper {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      translate: -50% -60%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .skeletonProfileImg {
+        background-color: $contentBackground;
+        animation: skaletonAnimation 2s linear infinite;
+        border: 0.25rem solid $bodyBackground;
+        backdrop-filter: blur(2rem);
+        border-radius: 50%;
+        width: 11rem;
+        height: 11rem;
+      }
+
+      .skeletonProfileName,
+      .skeletonProfileDesc {
+        margin-top: 1.5rem;
+        background-color: $contentBackground;
+        animation: skaletonAnimation 2s linear infinite;
+        width: 13rem;
+        height: 1.5rem;
+        border-radius: $radiusLow;
+      }
+
+      .skeletonProfileDesc {
+        margin-top: 1rem;
+        width: 15rem;
+      }
+    }
+  }
+}

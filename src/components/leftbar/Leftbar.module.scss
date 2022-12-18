@@ -1,0 +1,140 @@
+@import '../../assets/variable.scss';
+
+.leftbarContainer {
+    padding-top: 1.25rem;
+    padding-inline: .5rem;
+    overflow-y: scroll;
+    position: sticky;
+    top: 4.25rem;
+    height: calc(100vh - 4.25rem);
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+        background-color: #424242;
+        width: .8rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: hsl(225, 9%, 44%);
+        border: 2px solid #424242;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: hsl(225, 9%, 74%);
+    }
+
+    .leftbarTitle {
+        color: hsl(210, 12%, 43%);
+        font-size: .9rem;
+        text-transform: uppercase;
+        line-height: 2;
+        margin-bottom: .75rem;
+    }
+
+    .leftbarMenu {
+        list-style: none;
+
+        .leftbarTitle {
+            margin-left: 1.25rem;
+        }
+
+        .leftbarMenuItem {
+            width: 100%;
+            border-radius: $radiusLow;
+            overflow: hidden;
+            transition: background-color 200ms ease-in, color 150ms ease-in;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            
+            &.active {
+                background-color: $activeBackground;
+                
+                .leftbarMenuItemText,
+                .leftbarIcon {
+                    color: $textBlue;
+                }
+            }
+            
+            .leftbarLink {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                transition: background-color 150ms ease-in, color 150ms ease-in;
+                width: 100%;
+                padding-inline: 1rem;
+                padding-block: .25rem;
+                box-sizing: border-box;
+
+                &:hover {
+                    background-color: $hoverBackground;
+                    
+                    .leftbarMenuItemText,
+                    .leftbarIcon {
+                        color: $hoverColor;
+                    }
+                }
+            }
+            
+            .leftbarIcon {
+                color: $textGray;
+                margin-right: .67rem;
+            }
+
+            .leftbarMenuItemText {
+                color: $textGray;
+                font-size: .95rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .leftbarFriendLists {
+        margin-top: 2rem;
+        padding-right: 1rem;
+        list-style: none;
+
+        .leftbarTitle {
+            padding-left: 1.25rem;
+        }
+        
+        .leftbarFriendListsItem {
+            margin-bottom: .5rem;
+            padding-left: 1rem;
+            padding-block: .5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-radius: $radiusLow;
+            background-color: transparent;
+            transition: background-color 150ms ease-out, color 150ms ease-in;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $hoverBackground;
+                color: $hoverColor;
+            }
+
+            .leftbarFriendImage {
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                overflow: hidden;
+                border-radius: 50%;
+                // border: 2px solid $textWhite;
+                margin-right: .9rem;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .leftbarFriendName {
+                font-size: .9rem;
+                color: $textWhite;
+            }
+        }
+    }
+}

@@ -1,0 +1,181 @@
+@import "../../assets/variable.scss";
+@import "../../assets/grid.scss";
+
+.rightbarContainer {
+  padding-block: 1.5rem;
+  padding-inline: 0.5rem 1.5rem;
+  box-sizing: border-box;
+
+  .rightbarFollowBtn {
+    margin-bottom: 1.5rem;
+  }
+
+  .rightbarTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: hsl(210, 12%, 43%);
+    margin-bottom: 1rem;
+  }
+
+  .rightbarGift {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .rightbarGiftImg {
+      width: 5rem;
+      margin-right: 1rem;
+    }
+
+    .rightbarGiftText {
+      font-size: 1rem;
+      font-weight: 300;
+      color: $textGray;
+    }
+  }
+
+  .rightbarAdv {
+    margin-bottom: 2rem;
+
+    .rightbarAdvImg {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 0.7rem;
+    }
+  }
+
+  .rightbarOnlineFriends {
+    list-style: none;
+
+    .rightbarOnlineFriend {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      width: fit-content;
+      margin-bottom: 1rem;
+
+      .rightbarOnlineFriendImg {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        margin-right: 0.8rem;
+
+        img {
+          width: 2.25rem;
+          height: 2.25rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        .badgeOnline {
+          background-color: hsl(120, 100%, 50%);
+          width: 0.75rem;
+          height: 0.75rem;
+          border: 2px solid $bodyBackground;
+          position: absolute;
+          border-radius: 50%;
+          top: -5px;
+          right: -5px;
+        }
+      }
+
+      .rightbarOnlineFriendName {
+        font-size: 0.9rem;
+        color: $textWhite;
+      }
+    }
+  }
+
+  .rightbarProfileInfo {
+    @include displayGrid();
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    .rightbarProfileInfoItem {
+      @include column(6);
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid $borderBlue;
+
+      &:nth-child(odd) {
+        margin-right: 0.25rem;
+      }
+
+      &:nth-child(even) {
+        margin-left: 0.25rem;
+      }
+
+      .rightbarProfileInfoKey {
+        display: block;
+        color: $textWhite;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0;
+        text-transform: capitalize;
+      }
+
+      .rightbarProfileInfoValue {
+        display: inline-block;
+        text-transform: capitalize;
+        color: $textGray;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .rightbarFollowings {
+    @include displayGrid();
+    text-decoration: none;
+    gap: 1.5rem;
+
+    .rightbarFollowing {
+      @include column(4);
+
+      .followingSkeletonBg {
+        background-color: $contentBackground;
+      }
+
+      .followingNameSkeleton {
+        display: block;
+        margin-top: 1rem;
+        width: 100%;
+        border-radius: $radiusLow;
+        height: 1.25rem;
+      }
+
+      .rightbarFollowingImgWrapper {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: $radiusLow;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+          .rightbarFollowingImg {
+            scale: 1.2;
+          }
+        }
+
+        .rightbarFollowingImg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: scale 200ms ease-in;
+        }
+      }
+
+      .rightbarFollowingName {
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        font-size: 1rem;
+        text-decoration: none;
+        color: $textWhite;
+        font-weight: 400;
+        white-space: wrap;
+        margin-top: 0.67rem;
+      }
+    }
+  }
+}
